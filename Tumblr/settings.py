@@ -1,6 +1,13 @@
 # Django settings for Tumblr project.
 import os
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))  
+try:
+    import social_auth
+    import tumblr_auth
+except ImportError:
+    import sys
+    sys.path.insert(0, '..')
+
 
 LOGIN_URL          = '/login-form/'
 LOGIN_REDIRECT_URL = '/logged-in/'
